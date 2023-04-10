@@ -146,12 +146,12 @@ void run_UI() {
         printf("2. Actualizare medicament\n");
         printf("3. Stergere stoc medicament\n");
         printf("4. Vizualizare medicament stoc ordonate dupa nume si cantitate, crescator/descrescator\n");
-        printf("5. Vizualizare lista de medicamente unde stocul disponibil e mai mic decat o valoare data\n");
+        printf("5. Vizualizare lista de medicamente unde stocul disponibil e mai mic decat o valoare data\n"); 
         printf("6. Vizualizare lista de medicamente unde numele medicamentelor incepe cu o litera data\n");
-        printf("7. Afisare totalitatea medicamentelor\n");
-        printf("8. Undo\n");
-        printf("9. Exit\n");
-        printf("10. Vizualizare lista de medicamente unde concentratia este mai mare decat o valoare data");
+        printf("7. Vizualizare lista de medicamente unde concentratia este mai mare decat o valoare data\n");
+        printf("8. Afisare totalitatea medicamentelor\n");
+        printf("9. Undo\n");
+        printf("10. Exit\n");
         printf("Alegeti optiunea:");
         char op[20];
         scanf("%s", op);
@@ -183,20 +183,21 @@ void run_UI() {
                     break;
 
                 case 7:
-                    ui_afiseaza_toate_medicamentele(&farmacie);
+                    ui_filtrare_medicament_concentratie(&farmacie);
                     break;
 
                 case 8:
-                    ui_undo(&farmacie);
+                    ui_afiseaza_toate_medicamentele(&farmacie);
                     break;
 
                 case 9:
-                    run = 0;
+                    ui_undo(&farmacie);
                     break;
 
                 case 10:
-                    ui_filtrare_medicament_concentratie(&farmacie);
+                    run = 0;
                     break;
+
                 default:
                     printf("\ncomanda invalida\n\n");
                     break;
